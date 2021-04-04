@@ -17,7 +17,7 @@ public class UsuarioController {
     @Autowired
     UsuarioRepository usuarioRepository;
 
-    @RequestMapping("/")
+    @RequestMapping("")
     public String listarUsuarios(Model model){
         model.addAttribute( "usuarios", usuarioRepository.findAll());
         return "list";
