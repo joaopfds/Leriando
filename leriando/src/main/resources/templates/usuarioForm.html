@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de usuario</title>
+</head>
+<body>
+<h1>Formulario de usuario</h1>
+
+<form action="#" th:action="@{/process}" th:object="${usuario}" method="post">
+    Nome: <input type="text" th:field="*{nome}">
+    <span th:if="${#fields.hasErrors('nome')}"
+          th:errors="*{nome}"></span><br>
+    Email: <input type="email" th:field="*{email}">
+    <span th:if="${#fields.hasErrors('email')}"
+          th:errors="*{email}"></span><br>
+    <input type="submit" value="Enviar">
+
+</form>
+
+</body>
+</html>

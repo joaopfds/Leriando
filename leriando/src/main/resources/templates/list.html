@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de usuarios</title>
+</head>
+<body>
+<h1>Formulario de usuario</h1>
+<a href="/add"> Adicionar usuario </a><br>
+
+<div th:each="usuario : ${usuarios}">
+    <h4 th:inline="text"> [[${usuario.nome}]] na [[${usuario.email}]] </h4>
+</div>
+</body>
+</html>
