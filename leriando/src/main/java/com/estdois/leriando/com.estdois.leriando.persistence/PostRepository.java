@@ -1,4 +1,4 @@
-package com.estdois.leriando.com.estdois.leriando.persistence;
+package com.estdois.leriando.persistence;
 
 
 import com.estdois.leriando.entity.Post;
