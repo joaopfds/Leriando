@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listagem de posts</title>
+</head>
+<body>
+<h1>Listagem de posts</h1>
+<a href="/post/add"> Adicionar post </a><br>
+
+<div th:each="post : ${posts}">
+    <h4 th:inline="text"> [[${post.text}]] na [[${post.tipo}]] </h4>
+</div>
+
+</body>
+</html>
