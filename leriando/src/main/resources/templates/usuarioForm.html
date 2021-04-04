@@ -10,21 +10,13 @@
 <h1>Formulario de usuario</h1>
 
 <form action="#" th:action="@{/process}" th:object="${usuario}" method="post">
-    <div class="mb-3">
-        <label for="formGroupExampleInput" class="form-label">Nome:</label>
-        <input type="text" th:field="*{nome}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-        <span th:if="${#fields.hasErrors('nome')}"
-              th:errors="*{nome}"></span><br>
-
-    </div>
-    <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Email:</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" th:field="*{email}"
-               aria-describedby="emailHelp">
-        <span th:if="${#fields.hasErrors('email')}"
-              th:errors="*{email}"></span><br>
-    </div>
-    <button type="submit" class="btn btn-primary">Adicionar</button>
+    Nome: <input type="text" th:field="*{nome}"  class="form-control" >
+    <span th:if="${#fields.hasErrors('nome')}"
+          th:errors="*{nome}"></span><br>
+    Email: <input type="email" th:field="*{email}" class="form-control">
+    <span th:if="${#fields.hasErrors('email')}"
+          th:errors="*{email}"></span><br>
+    <input type="submit" value="Adicionar">
 
 </form>
 
