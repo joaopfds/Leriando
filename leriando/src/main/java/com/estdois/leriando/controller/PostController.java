@@ -14,25 +14,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/post")
 public class PostController {
 
     @Autowired
     PostRepository postRepository;
 
-    @RequestMapping("")
+    @RequestMapping("/post")
     public String ListarPosts(Model model){
         model.addAttribute("posts",postRepository.findAll());
         return "ListaDePosts";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/post/add")
     public String postForm(Model model){
         model.addAttribute("post", new Post());
         return "postForm";
     }
 
-    @PostMapping("/process")
+    @PostMapping("/post/process")
     public String processFrom(@Validated Post post, BindingResult result){
         if (result.hasErrors()){
             return "postForm";

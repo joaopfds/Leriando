@@ -10,26 +10,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.estdois.leriando.persistence.UsuarioRepository;
+
 @Controller
-@RequestMapping("/usuario")
 public class UsuarioController {
 
     @Autowired
     UsuarioRepository usuarioRepository;
 
-    @RequestMapping("")
+    @RequestMapping("/usuario")
     public String listarUsuarios(Model model){
         model.addAttribute( "usuarios", usuarioRepository.findAll());
         return "list";
     }
 
-    @GetMapping("/add")
+    @GetMapping("/usuario/add")
     public String usuarioForm(Model model){
         model.addAttribute("usuario", new Usuario());
         return "usuarioForm";
     }
 
-    @PostMapping("/process")
+    @PostMapping("/usuario/process")
     public String processFrom(@Validated Usuario usuario, BindingResult result){
         if (result.hasErrors()){
             return "usuarioForm";
