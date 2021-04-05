@@ -37,7 +37,7 @@ public class PostController {
             return "postForm";
         }
         postRepository.save(post);
-        return "redirect:/";
+        return "redirect:/post";
     }
 
 

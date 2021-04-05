@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista De Comentarios</title>
+</head>
+<body>
+<h1>Listagem de comentarios</h1>
+<a href="/coment/add"> Adicionar comentario </a><br>
+
+<div th:each="comentario : ${comentarios}">
+    <h4 th:inline="text"> [[${comentario.text}]] - [[${comentario.id}]] </h4>
+</div>
+
+</body>
+</html>
