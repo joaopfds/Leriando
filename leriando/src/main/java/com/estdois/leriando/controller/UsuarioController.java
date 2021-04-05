@@ -35,7 +35,7 @@ public class UsuarioController {
             return "usuarioForm";
         }
         usuarioRepository.save(usuario);
-        return "redirect:/";
+        return "redirect:/usuario";
     }
 }
 
