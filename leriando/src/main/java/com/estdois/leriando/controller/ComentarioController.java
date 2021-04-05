@@ -35,10 +35,7 @@ public class ComentarioController {
         comentarioRepository.save(comentario);
         return "redirect:/coment";
     }
-
-
-
-
+    //
 
 
 }

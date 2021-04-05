@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="leriando/src/main/resources/templates/add.css">
     <link rel="stylesheet" href="./src/main/resources/templates/add.css">
 </head>
-<body>
+<body >
 <h1>Adicinar post</h1>
 
 <form action="#" th:action="@{/post/process}" th:object="${post}" method="post">
-    texto: <input type="text" th:field="*{text}"  class="form-control" >
+    texto: <textarea class="form-control" rows="5"  th:field="*{text}" ></textarea>
     <span th:if="${#fields.hasErrors('text')}"
           th:errors="*{text}"></span><br>
     tipo: <input type="number" th:field="*{tipo}" class="form-control">

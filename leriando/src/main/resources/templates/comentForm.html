@@ -12,7 +12,7 @@
 <h1>Adicinar comentario</h1>
 
 <form action="#" th:action="@{/coment/process}" th:object="${comentario}" method="post">
-    Comentario: <textarea rows="5"  th:field="*{text}" ></textarea>
+    Comentario: <textarea  class="form-control" style="height: 100px" th:field="*{text}" ></textarea>
     <span th:if="${#fields.hasErrors('text')}"
           th:errors="*{text}"></span><br>
     <input type="submit" class="btn btn-primary" value="Adicionar">
