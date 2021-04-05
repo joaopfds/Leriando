@@ -32,12 +32,13 @@ public class ComentarioController {
         if (result.hasErrors()){
             return "comentForm";
         }
-        comentarioRepository.save(comentario);
-        return "redirect:/coment";
+        if (comentario.getText() != ""){
+            comentarioRepository.save(comentario);
+            return "redirect:/coment";
+        }else{
+            return "comentForm";
+        }
     }
-
-
-
 
 
 
