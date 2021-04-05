@@ -1,9 +1,8 @@
 package com.estdois.leriando.controller;
 
-
-import com.estdois.leriando.com.estdois.leriando.persistence.PostRepository;
 import com.estdois.leriando.entity.Post;
 import com.estdois.leriando.entity.Usuario;
+import com.estdois.leriando.persistence.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
