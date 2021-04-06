@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1>Formulario de usuario</h1>
-<a href="/usuario/add"> Adicionar usuario </a><br>
+<a href="/add"> Adicionar usuario </a><br>
 
 <div th:each="usuario : ${usuarios}">
     <h4 th:inline="text"> [[${usuario.nome}]] na [[${usuario.email}]] </h4>
