@@ -1,11 +1,16 @@
 package com.estdois.leriando.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -20,6 +25,17 @@ public class Usuario {
 
     @NotNull
     private String email;
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties("usuario")
+    @JsonIgnore
+    private List<Post> posts = new ArrayList<>();
+
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties({"usuario, post"})
+    @JsonIgnore
+    private List<Comentario> comentarios = new ArrayList<>();
 
     public Usuario() {
 
@@ -58,6 +74,22 @@ public class Usuario {
     public void setEmail(String email) {
 
         this.email = email;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
+    }
+
+    public List<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(List<Comentario> comentarios) {
+        this.comentarios = comentarios;
     }
     /*{@Override
     public int hashCode() {

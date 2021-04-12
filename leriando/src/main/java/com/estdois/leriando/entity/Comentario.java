@@ -1,11 +1,10 @@
 package com.estdois.leriando.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Comentario {
@@ -16,6 +15,16 @@ public class Comentario {
 
     @NotNull
     private String text;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id",referencedColumnName = "id")
+    @JsonIgnore
+    private Post post;
+
+    @ManyToOne
+    @JoinColumn(name = "Usuario_id",referencedColumnName = "id")
+    @JsonIgnore
+    private Usuario usuario;
 
 
     public Long getId() {
@@ -32,5 +41,21 @@ public class Comentario {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Post getPost() {
+        return post;
+    }
+
+    public void setPost(Post post) {
+        this.post = post;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }

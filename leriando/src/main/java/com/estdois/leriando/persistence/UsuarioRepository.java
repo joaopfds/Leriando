@@ -12,4 +12,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
 
 
+
 }
