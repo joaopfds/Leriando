@@ -46,7 +46,7 @@
     <a href="/post/add"> Adicionar post </a><br>
 
     <div th:each="post : ${posts}">
-        <h4 th:inline="text"> [[${post.text}]] na [[${post.tipo}]] </h4>
+        <h4 th:inline="text"> [[${post.text}]] do tipo: [[${post.tipo}]] </h4>
     </div>
     <br>
 </div>
