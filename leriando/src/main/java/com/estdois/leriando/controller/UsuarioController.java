@@ -34,8 +34,14 @@ public class UsuarioController {
         if (result.hasErrors()){
             return "usuarioForm";
         }
-        usuarioRepository.save(usuario);
-        return "redirect:/usuario";
+
+        if (usuario.getSenha() != ""){
+            usuarioRepository.save(usuario);
+            return "redirect:/usuario";
+        }else {
+            return "usuarioForm";
+        }
+
     }
 }
 

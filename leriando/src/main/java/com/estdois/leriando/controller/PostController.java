@@ -36,8 +36,13 @@ public class PostController {
         if (result.hasErrors()){
             return "postForm";
         }
-        postRepository.save(post);
-        return "redirect:/post";
+
+        if (post.getText() != ""){
+            postRepository.save(post);
+            return "redirect:/post";
+        }else{
+            return "postForm";
+        }
     }
 
 
