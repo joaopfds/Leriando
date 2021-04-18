@@ -26,6 +26,10 @@ public class Usuario {
     @NotNull
     private String email;
 
+
+    @NotNull
+    private String senha;
+
     @OneToMany(mappedBy = "usuario")
     @JsonIgnoreProperties("usuario")
     @JsonIgnore
@@ -65,6 +69,14 @@ public class Usuario {
     public void setNome(String nome) {
 
         this.nome = nome;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 
     public String getEmail() {
