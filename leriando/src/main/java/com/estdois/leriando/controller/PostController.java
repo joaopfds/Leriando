@@ -12,11 +12,28 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
 public class PostController {
 
-    @Autowired
+    static List<String> listaDeTipos = null;
+
+    static {
+        listaDeTipos = new ArrayList<>();
+        listaDeTipos.add("matemática");
+        listaDeTipos.add("portugues");
+        listaDeTipos.add("ingles");
+        listaDeTipos.add("espanhol");
+        listaDeTipos.add("história");
+        listaDeTipos.add("ciências");
+        listaDeTipos.add("geografia");
+        listaDeTipos.add("redação");
+    }
+
+        @Autowired
     PostRepository postRepository;
 
     @RequestMapping("/post")
@@ -28,6 +45,7 @@ public class PostController {
     @GetMapping("/post/add")
     public String postForm(Model model){
         model.addAttribute("post", new Post());
+        model.addAttribute("listaDeTipos", listaDeTipos);
         return "postForm";
     }
 

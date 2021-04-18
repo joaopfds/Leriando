@@ -23,9 +23,9 @@
     texto: <textarea class="form-control" rows="5"  th:field="*{text}" ></textarea>
     <span th:if="${#fields.hasErrors('text')}"
           th:errors="*{text}"></span><br>
-    tipo: <input type="number" th:field="*{tipo}" class="form-control">
-    <span th:if="${#fields.hasErrors('tipo')}"
-          th:errors="*{tipo}"></span><br>
+    tipo: <select name="tipos">
+          <option th:each="tipos : ${listaDeTipos}" th:text="${tipos}"></option>
+          </select><br>
     <input type="submit" class="btn btn-primary" value="Adicionar">
 </form>
 

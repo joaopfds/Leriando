@@ -20,7 +20,7 @@ public class Post {
     private String text;
 
     @NotNull
-    private int tipo;
+    private String tipo;
 
     @ManyToOne
     @JoinColumn(name = "usuario_id",referencedColumnName = "id")
@@ -36,7 +36,7 @@ public class Post {
 
     }
 
-    public Post(Long id, String text, int tipo) {
+    public Post(Long id, String text, String tipo) {
         this.id = id;
         this.text = text;
         this.tipo = tipo;
@@ -58,11 +58,11 @@ public class Post {
         this.text = text;
     }
 
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
