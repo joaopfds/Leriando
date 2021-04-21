@@ -41,6 +41,7 @@ public class PostController {
 
     @Autowired
     PostRepository postRepository;
+    @Autowired
     ComentarioRepository comentRepository;
 
     @RequestMapping("/post")
