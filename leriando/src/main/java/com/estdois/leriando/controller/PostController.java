@@ -20,7 +20,7 @@ import java.util.List;
 
 @Controller
 public class PostController {
-
+    long i,k;
     static List<String> listaDeTipos = null;
 
     static {
@@ -48,13 +48,10 @@ public class PostController {
         //postcoment = new ArrayList<>();
         //postcoment.add(postRepository.findAll());
         //model.addAttribute("coments", )
-
-        long numpost = postRepository.count();
-        long numcoment = comentRepository.count();
-        for (int i = 1; i == numpost; i++);
+        for ( i = 1; i == postRepository.count(); i++)
         {   List<String> listaDePosts = null;
             Post postselect = postRepository.findById(i);
-            for (long k = 1; k == numcoment; k++);
+            for (k = 1; k == comentRepository.count(); k++);
             {   listaDePosts = new ArrayList<>();
                 Comentario coment = comentRepository.findById(k);
                 if (coment == postselect.getComentarios()){
