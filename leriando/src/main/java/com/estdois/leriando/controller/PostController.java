@@ -6,6 +6,8 @@ import com.estdois.leriando.entity.Usuario;
 import com.estdois.leriando.persistence.ComentarioRepository;
 import com.estdois.leriando.persistence.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.util.BeanDefinitionUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,7 +16,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 
@@ -37,30 +41,33 @@ public class PostController {
 
     @Autowired
     PostRepository postRepository;
-
-    @Autowired
     ComentarioRepository comentRepository;
 
     @RequestMapping("/post")
     public String ListarPosts(Model model){
         model.addAttribute("posts",postRepository.findAll());
+        model.addAttribute("coments", postRepository.findComentarios());
         //List<Post> postcoment = null;
         //postcoment = new ArrayList<>();
         //postcoment.add(postRepository.findAll());
         //model.addAttribute("coments", )
+        /*List<Post> listaDePosts = new ArrayList<Post>();
+        for ( i = 1; i == postRepository.count(); i++){
+            listaDePosts.add(postRepository.findById(i));
+        }
+                postRepository.findAll();
         for ( i = 1; i == postRepository.count(); i++)
-        {   List<String> listaDePosts = null;
-            Post postselect = postRepository.findById(i);
+        {   List<Post> listaDePosts = postRepository.findAll();
             for (k = 1; k == comentRepository.count(); k++);
             {   listaDePosts = new ArrayList<>();
                 Comentario coment = comentRepository.findById(k);
-                if (coment == postselect.getComentarios()){
+                if (coment. == ){
                     listaDeTipos.add(coment.getText());
                 }
             }
             model.addAttribute("coments", listaDePosts);
             listaDePosts = null;
-        }
+        }*/
         return "ListaDePosts";
     }
 

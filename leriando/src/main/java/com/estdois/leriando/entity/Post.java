@@ -4,11 +4,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@NamedQueries({
+        @NamedQuery(name = "Post.getCometText",
+                query= "SELECT c.text FROM Comentario c, Post p where c.post = p")
+})
 @Entity
 public class Post {
     @Id
