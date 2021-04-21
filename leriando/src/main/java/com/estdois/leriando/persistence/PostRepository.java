@@ -15,5 +15,5 @@ import java.util.List;
 public interface PostRepository extends CrudRepository<Post, Long> {
 
     @Query("SELECT c.text FROM Comentario c  ")
-    List<Comentario> findComentarios();
+    List<String> findComentarios();
 }
