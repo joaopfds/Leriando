@@ -46,7 +46,7 @@ public class PostController {
     @RequestMapping("/post")
     public String ListarPosts(Model model){
         model.addAttribute("posts",postRepository.findAll());
-        model.addAttribute("coments", comentRepository.findComentarios());
+        //model.addAttribute("coments", comentRepository.findComentarios());
         //List<Post> postcoment = null;
         //postcoment = new ArrayList<>();
         //postcoment.add(postRepository.findAll());
