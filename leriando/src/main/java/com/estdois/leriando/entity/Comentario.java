@@ -58,4 +58,9 @@ public class Comentario {
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
+
+    @Override
+    public String toString() {
+        return "Comentario [text=" + text + "]";
+    }
 }

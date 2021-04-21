@@ -2,6 +2,7 @@ package com.estdois.leriando.controller;
 
 import com.estdois.leriando.entity.Post;
 import com.estdois.leriando.entity.Usuario;
+import com.estdois.leriando.persistence.ComentarioRepository;
 import com.estdois.leriando.persistence.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,12 +34,20 @@ public class PostController {
         listaDeTipos.add("redação");
     }
 
-        @Autowired
+    @Autowired
     PostRepository postRepository;
+
+    @Autowired
+    ComentarioRepository comentRepository;
 
     @RequestMapping("/post")
     public String ListarPosts(Model model){
         model.addAttribute("posts",postRepository.findAll());
+        model.addAttribute("coments", comentRepository.findAll());
+        //List<Post> postcoment = null;
+        //postcoment = new ArrayList<>();
+        //postcoment.add(postRepository.findAll());
+        //model.addAttribute("coments", )
         return "ListaDePosts";
     }
 
