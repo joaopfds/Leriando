@@ -1,5 +1,6 @@
 package com.estdois.leriando.controller;
 
+import com.estdois.leriando.entity.Comentario;
 import com.estdois.leriando.entity.Post;
 import com.estdois.leriando.entity.Usuario;
 import com.estdois.leriando.persistence.ComentarioRepository;
@@ -43,11 +44,26 @@ public class PostController {
     @RequestMapping("/post")
     public String ListarPosts(Model model){
         model.addAttribute("posts",postRepository.findAll());
-        model.addAttribute("coments", comentRepository.findAll());
         //List<Post> postcoment = null;
         //postcoment = new ArrayList<>();
         //postcoment.add(postRepository.findAll());
         //model.addAttribute("coments", )
+
+        long numpost = postRepository.count();
+        long numcoment = comentRepository.count();
+        for (int i = 1; i == numpost; i++);
+        {   List<String> listaDePosts = null;
+            Post postselect = postRepository.findById(i);
+            for (long k = 1; k == numcoment; k++);
+            {   listaDePosts = new ArrayList<>();
+                Comentario coment = comentRepository.findById(k);
+                if (coment == postselect.getComentarios()){
+                    listaDeTipos.add(coment.getText());
+                }
+            }
+            model.addAttribute("coments", listaDePosts);
+            listaDePosts = null;
+        }
         return "ListaDePosts";
     }
 
