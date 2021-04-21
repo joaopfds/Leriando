@@ -47,28 +47,6 @@ public class PostController {
     @RequestMapping("/post")
     public String ListarPosts(Model model){
         model.addAttribute("posts",postRepository.findAll());
-        //model.addAttribute("coments", comentRepository.findComentarios());
-        //List<Post> postcoment = null;
-        //postcoment = new ArrayList<>();
-        //postcoment.add(postRepository.findAll());
-        //model.addAttribute("coments", )
-        /*List<Post> listaDePosts = new ArrayList<Post>();
-        for ( i = 1; i == postRepository.count(); i++){
-            listaDePosts.add(postRepository.findById(i));
-        }
-                postRepository.findAll();
-        for ( i = 1; i == postRepository.count(); i++)
-        {   List<Post> listaDePosts = postRepository.findAll();
-            for (k = 1; k == comentRepository.count(); k++);
-            {   listaDePosts = new ArrayList<>();
-                Comentario coment = comentRepository.findById(k);
-                if (coment. == ){
-                    listaDeTipos.add(coment.getText());
-                }
-            }
-            model.addAttribute("coments", listaDePosts);
-            listaDePosts = null;
-        }*/
         return "ListaDePosts";
     }
 
