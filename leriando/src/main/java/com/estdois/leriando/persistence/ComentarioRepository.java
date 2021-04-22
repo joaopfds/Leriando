@@ -7,6 +7,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface ComentarioRepository extends CrudRepository<Comentario, Long> {
-    @Query("SELECT c FROM Comentario c")
+    @Query("SELECT c FROM Comentario c join Post p on (c.post = p)")
     List<Comentario> findComentarios();
 }
