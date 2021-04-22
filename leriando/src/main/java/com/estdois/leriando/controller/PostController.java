@@ -50,7 +50,7 @@ public class PostController {
 
         for ( i = 1; i == postRepository.count(); i++)
         {
-            model.addAttribute("coments", comentRepository.findComentarios());
+            model.addAttribute("coments", comentRepository.findComentarios(i));
         }
 
         //List<Post> postcoment = null;

@@ -18,7 +18,7 @@ public class Post {
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
-    private Long id;
+    protected Long id;
 
     @NotNull
     private String text;
