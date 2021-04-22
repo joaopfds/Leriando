@@ -46,11 +46,11 @@ public class PostController {
 
     @RequestMapping("/post")
     public String ListarPosts(Model model){
-        model.addAttribute("posts",postRepository.findAll());
 
         for ( i = 1; i == postRepository.count(); i++)
         {
             model.addAttribute("coments", comentRepository.findComentarios(i));
+            model.addAttribute("posts",postRepository.findById(i));
         }
 
         //List<Post> postcoment = null;
