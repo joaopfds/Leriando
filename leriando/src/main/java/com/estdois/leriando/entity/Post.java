@@ -11,8 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 @NamedQueries({
         @NamedQuery(name = "Post.getCometText",
-                query= "SELECT c.text FROM Comentario c, Post p where c.post = p")
+                query= "SELECT c FROM Comentario c, Post p where c.post = p")
 })
+@Table(name = "Post")
 @Entity
 public class Post {
     @Id
