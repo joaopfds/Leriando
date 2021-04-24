@@ -46,7 +46,7 @@ public class PostController {
     ComentarioRepository comentRepository;
 
     @RequestMapping("/post")
-    public String ListaDeTiposDePosts(){
+    public String ListTiposPosts(){
         return "listaDeTipos";
     }
 
