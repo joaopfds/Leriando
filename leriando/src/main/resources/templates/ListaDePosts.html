@@ -47,7 +47,7 @@
 
     <div th:each="post : ${posts}" th:each="coment : ${coments}">
         <h4 th:inline="text"> [[${post.text}]] do tipo: [[${post.tipo}]] </h4>
-        <h5 th:inline="text"> [[${coment}]] </h5>
+        <h5 th:inline="text"> [[${coment.text}]] </h5>
     </div>
     <br>
 </div>
