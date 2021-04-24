@@ -59,8 +59,12 @@ public class Comentario {
         this.usuario = usuario;
     }
 
-    @Override
+    public Long getPostId(){
+        return this.post.id;
+    }
+
+    /*@Override
     public String toString() {
         return "Comentario [text=" + text + "]";
-    }
+    }*/
 }
