@@ -85,7 +85,6 @@ public class PostController {
         if (result.hasErrors()){
             return "postForm";
         }
-
         if (post.getText() != ""){
             postRepository.save(post);
             return "redirect:/post";
@@ -93,6 +92,12 @@ public class PostController {
             return "postForm";
         }
     }
+
+    @PostMapping("/post/{id}")
+    public String returPost(){
+        return "home";
+    }
+
 
 
 }
