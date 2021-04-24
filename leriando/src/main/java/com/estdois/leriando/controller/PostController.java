@@ -45,16 +45,16 @@ public class PostController {
     @Autowired
     ComentarioRepository comentRepository;
 
-    @RequestMapping("/post")
-    public String ListTiposPosts(){
-        return "listaDeTipos";
-    }
-
     @RequestMapping("/post/mat")
     public String MatPosts(Model model, Model models){
         model.addAttribute("posts",postRepository.findPostMat());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
+    }
+
+    @RequestMapping("/post")
+    public String ListTiposPosts(){
+        return "listaDeTipos";
     }
 
     @RequestMapping("/post/asd")
