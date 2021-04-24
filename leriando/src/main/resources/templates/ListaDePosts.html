@@ -45,9 +45,11 @@
     <h3>Listagem de posts</h3>
     <a href="/post/add"> Adicionar post </a><br>
 
-    <div th:each="post : ${posts}" th:each="coment : ${coments}">
+    <div th:each="post : ${posts}">
         <h4 th:inline="text"> [[${post.text}]] do tipo: [[${post.tipo}]] </h4>
-        <h5 th:inline="text"> [[${coment.text}]] </h5>
+        <div th:each="coment : ${coments}">
+            <h5 th:inline="text"> [[${coment.text}]] </h5>
+        </div>
     </div>
     <br>
 </div>

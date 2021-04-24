@@ -32,8 +32,6 @@ public class Post {
 
 
     @OneToMany(mappedBy = "post")
-    @JsonIgnoreProperties("usuario, post")
-    @JsonIgnore
     private List<Comentario> comentarios = new ArrayList<>();
 
     public Post() {
