@@ -15,6 +15,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.EntityManager;
 import java.util.ArrayList;
@@ -29,14 +30,14 @@ public class PostController {
 
     static {
         listaDeTipos = new ArrayList<>();
-        listaDeTipos.add("matemática");
-        listaDeTipos.add("portugues");
-        listaDeTipos.add("ingles");
-        listaDeTipos.add("espanhol");
-        listaDeTipos.add("história");
-        listaDeTipos.add("ciências");
-        listaDeTipos.add("geografia");
-        listaDeTipos.add("redação");
+        listaDeTipos.add("Matemática");
+        listaDeTipos.add("Portugues");
+        listaDeTipos.add("Inglês");
+        listaDeTipos.add("Espanhol");
+        listaDeTipos.add("História");
+        listaDeTipos.add("Ciências");
+        listaDeTipos.add("Geografia");
+        listaDeTipos.add("Redação");
     }
 
     @Autowired
@@ -45,9 +46,21 @@ public class PostController {
     ComentarioRepository comentRepository;
 
     @RequestMapping("/post")
-    public String ListarPosts(Model model){
+    public String ListaDeTiposDePosts(){
+        return "listaDeTipos";
+    }
+
+    @RequestMapping("/post/mat")
+    public String MatPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+
+    @RequestMapping("/post/asd")
+    public String ListarPosts(Model model, Model models){
             model.addAttribute("posts",postRepository.findAll());
-            model.addAttribute("coments", comentRepository.findComentarios());
+            models.addAttribute("coments", comentRepository.findComentarios());
 
         //List<Post> postcoment = null;
         //postcoment = new ArrayList<>();

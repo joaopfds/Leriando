@@ -16,4 +16,8 @@ public interface PostRepository extends CrudRepository<Post, Long> {
 
     @Query("SELECT c FROM Comentario c")
     List<Comentario> findComentarios();
+
+    @Query("SELECT p FROM Post p where p.tipo like '%ca' ")
+    List<Post> findPostMat();
+
 }
