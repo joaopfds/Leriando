@@ -13,7 +13,6 @@ import java.util.List;
         @NamedQuery(name = "Post.getCometText",
                 query= "SELECT c FROM Comentario c, Post p where c.post = p")
 })
-@Table(name = "Post")
 @Entity
 public class Post {
     @Id
