@@ -53,37 +53,43 @@ public class PostController {
     }
     @RequestMapping("/post/pt")
     public String PtPosts(Model model, Model models){
-        model.addAttribute("posts",postRepository.findPostMat());
+        model.addAttribute("posts",postRepository.findPostPt());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
-    @RequestMapping("/post/ing")
+    @RequestMapping("/post/eng")
     public String IngPosts(Model model, Model models){
-        model.addAttribute("posts",postRepository.findPostMat());
+        model.addAttribute("posts",postRepository.findPostEng());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
     @RequestMapping("/post/esp")
     public String EspPosts(Model model, Model models){
-        model.addAttribute("posts",postRepository.findPostMat());
+        model.addAttribute("posts",postRepository.findPostEsp());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
     @RequestMapping("/post/hist")
     public String HisPosts(Model model, Model models){
-        model.addAttribute("posts",postRepository.findPostMat());
+        model.addAttribute("posts",postRepository.findPostHist());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
     @RequestMapping("/post/geo")
     public String GeoPosts(Model model, Model models){
-        model.addAttribute("posts",postRepository.findPostMat());
+        model.addAttribute("posts",postRepository.findPostGeo());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+    @RequestMapping("/post/Bio")
+    public String BioloPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostBiol());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
     @RequestMapping("/post/rdc")
     public String RedaPosts(Model model, Model models){
-        model.addAttribute("posts",postRepository.findPostMat());
+        model.addAttribute("posts",postRepository.findPostRedacao());
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
