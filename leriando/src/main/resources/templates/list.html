@@ -44,9 +44,10 @@
     <br>
     <h3>Lista de usuario</h3>
     <a href="/usuario/add"> Adicionar usuario </a><br>
-
+    <hr/>
     <div th:each="usuario : ${usuarios}">
-        <h4 th:inline="text"> Usuário: [[${usuario.nome}]] Email:  [[${usuario.email}]] </h4>
+        <h4 th:inline="text"> Usuário: [[${usuario.nome}]]  -  Email:  [[${usuario.email}]] </h4>
+        <hr/>
     </div>
     <br>
 </div>
