@@ -51,7 +51,42 @@ public class PostController {
         models.addAttribute("coments", comentRepository.findComentarios());
         return "ListaDePosts";
     }
-
+    @RequestMapping("/post/pt")
+    public String PtPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+    @RequestMapping("/post/ing")
+    public String IngPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+    @RequestMapping("/post/esp")
+    public String EspPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+    @RequestMapping("/post/hist")
+    public String HisPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+    @RequestMapping("/post/geo")
+    public String GeoPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
+    @RequestMapping("/post/rdc")
+    public String RedaPosts(Model model, Model models){
+        model.addAttribute("posts",postRepository.findPostMat());
+        models.addAttribute("coments", comentRepository.findComentarios());
+        return "ListaDePosts";
+    }
 
     @RequestMapping("/post")
     public String ListTiposPosts(){
