@@ -23,7 +23,7 @@ public interface PostRepository extends CrudRepository<Post, Long> {
     @Query("SELECT p FROM Post p where p.tipo like '%ues' ")
     List<Post> findPostPt();
 
-    @Query("SELECT p FROM Post p where p.tipo like '%les' ")
+    @Query("SELECT p FROM Post p where p.tipo like '%lês' ")
     List<Post> findPostEng();
 
     @Query("SELECT p FROM Post p where p.tipo like '%ol' ")
